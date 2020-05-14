@@ -1,11 +1,6 @@
 trigger:
 - '*'
 
-pool:
-  vmImage: 'ubuntu-16.04'
-  demands:
-    - npm
-
 variables:
   buildConfiguration: 'Release'
   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
@@ -56,6 +51,7 @@ steps:
 
     - publish: '$(Build.ArtifactStagingDirectory)'
       artifact: drop
+#####-------------Deploy--------
 - stage: 'Deploy'
   displayName: 'Deploy the web application'
   dependsOn: Build
