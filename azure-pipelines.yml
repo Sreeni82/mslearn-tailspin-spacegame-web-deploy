@@ -48,11 +48,10 @@ steps:
         publishWebProjects: false
         arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
         zipAfterPublish: true
-
     - publish: '$(Build.ArtifactStagingDirectory)'
       artifact: drop
 #####-------------Deploy--------
-stage: 'Deploy'
+- stage: 'Deploy'
   displayName: 'Deploy the web application'
   dependsOn: Build
   jobs:
