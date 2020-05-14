@@ -52,10 +52,10 @@ steps:
       artifact: drop
 #####-------------Deploy--------#####
 stages:
-  - stage: Deploy
-      displayName: 'Deploy the web application'
-      dependsOn: Build
-      jobs:
+- stage: Deploy
+  displayName: 'Deploy the web application'
+  dependsOn: Build
+  jobs:
       - deployment: Deploy
         pool:
           vmImage: 'ubuntu-16.04'
